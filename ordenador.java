@@ -9,7 +9,7 @@ public class ordenador{
     private boolean tieneSO;
 
     private LocalDate fechaVenta;
-    
+
     private int id;
 
     public ordenador(String marcaPC, int generacion, boolean SO, String fechaVendido, int idPC){
@@ -44,7 +44,7 @@ public class ordenador{
         return cpuGen;
     }
 
-    public String getTieneSO(){
+    public String getTieneSOString(){
         String cadenaADevolver = "";
         if(tieneSO){
             cadenaADevolver = "Tiene SO";
@@ -54,8 +54,18 @@ public class ordenador{
         }
         return cadenaADevolver;
     }
-    
+
+    public boolean getTieneSO(){
+        return tieneSO;
+    }
+
     public LocalDate getFechaVenta(){
         return fechaVenta;
+    }
+
+    public String getInfoPC(){
+        String cadenaADevolver = "";
+        cadenaADevolver = getMarca() + " " + getCpuGen() + " " + getTieneSOString() + " " + getFechaVenta() + " " + id;
+        return cadenaADevolver;
     }
 }
