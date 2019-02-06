@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=ordenador
+comment1.params=marcaPC\ generacion\ SO\ fechaVendido
+comment1.target=ordenador(java.lang.String,\ int,\ boolean,\ java.lang.String)
+numComments=2
