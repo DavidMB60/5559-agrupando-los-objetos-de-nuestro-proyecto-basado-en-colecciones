@@ -9,12 +9,15 @@ public class ordenador{
     private boolean tieneSO;
 
     private LocalDate fechaVenta;
+    
+    private int id;
 
-    public ordenador(String marcaPC, int generacion, boolean SO, String fechaVendido){
+    public ordenador(String marcaPC, int generacion, boolean SO, String fechaVendido, int idPC){
         marca = marcaPC;
         cpuGen = generacion;
         tieneSO = SO; 
         fechaVenta = LocalDate.parse(fechaVendido);
+        id = idPC;
     }
 
     public void setMarca(String marcaPC){
