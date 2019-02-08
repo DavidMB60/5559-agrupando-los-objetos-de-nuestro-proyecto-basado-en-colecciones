@@ -24,4 +24,17 @@ public class tiendaReparaciones
         ordenador pc = new ordenador(marcaPC, generacion, SO, fechaVendido, identificador);
         ordenadores.add(pc);
     }
+
+    /*
+     * Este metodo permite obtener unna lista de todos los elementos del ArrayList
+     */
+    public String mostrarTodosLosPC(){
+        String cadenaADevolver = "";
+        if(ordenadores.size()>0){
+            for(ordenador ordenadorActual : ordenadores){
+                cadenaADevolver = cadenaADevolver + ordenadorActual.getInfoPC() + "\n";
+            }
+        }
+        return cadenaADevolver;
+    }
 }
