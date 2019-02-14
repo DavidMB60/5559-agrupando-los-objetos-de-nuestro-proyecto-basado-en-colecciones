@@ -13,6 +13,8 @@ import org.junit.Test;
  */
 public class tiendaReparacionesTest
 {
+    private tiendaReparaciones tiendaRe1;
+
     /**
      * Default constructor for test class tiendaReparacionesTest
      */
@@ -28,6 +30,9 @@ public class tiendaReparacionesTest
     @Before
     public void setUp()
     {
+        tiendaRe1 = new tiendaReparaciones();
+        tiendaRe1.añadirOrdenador("Asus", 8, true, "2018-09-11");
+        tiendaRe1.añadirOrdenador("hp", 4, true, "2014-02-13");
     }
 
     /**
