@@ -62,6 +62,22 @@ public class tiendaReparacionesTest
         tiendaRe2.añadirOrdenador("Asus", 8, true , "2018-06-01");
         assertEquals("hp 4 No tiene SO 2014-05-06 1\nAsus 8 Tiene SO 2018-06-01 2\n", tiendaRe2.mostrarTodosLosPC());
     }
+    
+    @Test
+    public void testCommit7()
+    {
+        tiendaReparaciones tiendaRe2 = new tiendaReparaciones();
+        assertEquals("", tiendaRe2.mostrarTodosLosPC());
+        tiendaRe2.añadirOrdenador("hp", 1, false, "2014-05-06");
+        tiendaRe2.añadirOrdenador("Asus", 2, true , "2018-06-01");
+        tiendaRe2.añadirOrdenador("hp", 3, false, "2014-05-06");
+        tiendaRe2.añadirOrdenador("Asus", 5, true , "2018-06-01");
+        tiendaRe2.añadirOrdenador("hp", 4, false, "2014-05-06");
+        tiendaRe2.añadirOrdenador("Asus", 8, true , "2018-06-01");
+        tiendaRe2.añadirOrdenador("hp", 6, false, "2014-05-06");
+        tiendaRe2.añadirOrdenador("Asus", 7, true , "2018-06-01");
+        assertEquals("hp 1\nAsus 2\nhp 3\nhp 4\nAsus 5\nhp 6\nAsus 7\nAsus 8\n", tiendaRe2.mostrarTodosLosPCOrdenados());
+    }
 }
 
 

@@ -48,35 +48,22 @@ public class tiendaReparaciones
     public String mostrarTodosLosPCOrdenados(){
         String cadenaADevolver = "";
         ArrayList<ordenador> pcOrdenados = new ArrayList<ordenador>();
-        ordenador posicionBurbuja;
-        int contador = 0;
-        boolean hayPermutaciones = false;
+        int p, j;
+        ordenador aux;
         for(ordenador ordenadorActual : ordenadores){
             pcOrdenados.add(ordenadorActual);
         }
-
-        if (pcOrdenados.size()>0){
-            while(contador >= 0 && contador + 1 < pcOrdenados.size()){
-                if(pcOrdenados.get(contador).getCpuGen() > pcOrdenados.get(contador + 1).getCpuGen()){
-                    posicionBurbuja = pcOrdenados.get(contador);
-                    pcOrdenados.set(contador, pcOrdenados.get(contador + 1));
-                    pcOrdenados.set(contador + 1, posicionBurbuja);
-                    hayPermutaciones = true;
-                }
-
-                if (hayPermutaciones){
-                    contador = 0;
-                    hayPermutaciones = false;
-                }
-
-                contador = contador + 1;
+        for (p = 0; p < pcOrdenados.size(); p++){
+            aux = pcOrdenados.get(p);
+            j = p - 1;
+            while ((j >= 0) && (aux.getCpuGen() < pcOrdenados.get(j).getCpuGen())){
+                pcOrdenados.set(j + 1, pcOrdenados.get(j));
+                j--;
             }
+            pcOrdenados.set(j + 1, aux);
         }
-        
-        if(ordenadores.size()>0){
-            for(ordenador ordenadorActual : pcOrdenados){
-                cadenaADevolver = cadenaADevolver + ordenadorActual.getInfoPC() + "\n";
-            }
+        for(ordenador ordenadorActual : pcOrdenados){
+            cadenaADevolver += ordenadorActual.getMarca() + " " + ordenadorActual.getCpuGen() + "\n";
         }
         return cadenaADevolver;
     }

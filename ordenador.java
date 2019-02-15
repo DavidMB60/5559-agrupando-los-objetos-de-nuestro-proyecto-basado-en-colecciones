@@ -68,4 +68,8 @@ public class ordenador{
         cadenaADevolver = getMarca() + " " + getCpuGen() + " " + getTieneSOString() + " " + getFechaVenta() + " " + id;
         return cadenaADevolver;
     }
+    
+    public int getId(){
+        return id;
+    }
 }
