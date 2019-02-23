@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 /**
  * Write a description of class tiendaReparaciones here.
  *
@@ -68,4 +70,47 @@ public class tiendaReparaciones
         return cadenaADevolver;
     }
 
+    /**
+     * El HashMap sólo puede clasificar CPUs de la generación 4 hasta la 9.
+     */
+    public String obtenerDatosOrdenadoresHashMap() {
+        HashMap<String, ArrayList> hashMap = new HashMap<String, ArrayList>();
+        String ordenadoresADevolver = "";
+        int contador = 0;
+        for (int contador2 = 4; contador2 <= 9; contador2++) {
+            ArrayList<ordenador> gen = new ArrayList();
+            for (int contador3 = 0; contador3 < ordenadores.size(); contador3++) {
+                if (ordenadores.get(contador3).getCpuGen() == contador2) {
+                    gen.add(ordenadores.get(contador3));
+                }
+            }
+            hashMap.put(contador2 + "", gen);
+        }
+        for (String ordenadorActual : hashMap.keySet()) {
+            ArrayList<ordenador> aux = hashMap.get(ordenadorActual);
+            for (int contador2 = 0; contador2 < hashMap.get(ordenadorActual).size(); contador2++) {
+                if (ordenadorActual.equals("4") && contador2 == 0) {
+                    ordenadoresADevolver += "Generación 4:" + "\n";
+                }
+                else if (ordenadorActual.equals("5") && contador2 == 0) {
+                    ordenadoresADevolver += "Generación 5:" + "\n";
+                }
+                else if (ordenadorActual.equals("6") && contador2 == 0) {
+                    ordenadoresADevolver += "Generación 6:" + "\n";
+                }
+                else if (ordenadorActual.equals("7") && contador2 == 0) {
+                    ordenadoresADevolver += "Generación 7:" + "\n";
+                }
+                else if (ordenadorActual.equals("8") && contador2 == 0) {
+                    ordenadoresADevolver += "Generación 8:" + "\n";
+                }
+                else if (contador2 == 0){
+                    ordenadoresADevolver += "Generación 9:" + "\n";
+                }
+                ordenadoresADevolver += aux.get(contador2).getInfoPC() +" \n";
+            }
+        }
+        System.out.println(ordenadoresADevolver);
+        return ordenadoresADevolver;
+    }
 }

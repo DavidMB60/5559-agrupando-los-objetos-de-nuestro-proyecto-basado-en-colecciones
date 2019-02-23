@@ -16,4 +16,6 @@ comment5.params=
 comment5.target=void\ testCommit6()
 comment6.params=
 comment6.target=void\ testCommit7()
-numComments=7
+comment7.params=
+comment7.target=void\ testHashMap()
+numComments=8
